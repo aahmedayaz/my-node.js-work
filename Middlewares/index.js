@@ -1,36 +1,12 @@
 const express = require('express')
 const port = process.env.PORT || 3000
+const students = require('./routes/students')
 
 // Express application
 const app = express()
 
-// Middlewares
-app.get('*' , (req, res, next) => {
-  console.log('I am Middleware 1')
-  next('route')
-} , (req, res, next) => {
-  console.log('I am Middleware 1a')
-  next()
-} , (req, res, next) => {
-  console.log('I am Middleware 1b')
-  next()
-})
-
-app.get('*' , (req, res, next) => {
-  console.log('I am Middleware 2')
-  next()
-})
-
-app.get('*' , (req, res, next) => {
-  console.log('I am Middleware 3')
-  next()
-})
-
 // Routes
-app.get('*' , (req, res) => {
-  console.log('I am Route')
-  res.send('Some Bread.')
-})
+app.use('/api/students' , students)
 
 // server listening
 app.listen(port, (err) => {

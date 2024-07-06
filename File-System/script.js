@@ -12,6 +12,8 @@ fs.writeFile('Info.txt' , 'I am Ahmed Ayaz' , (err) => {
         console.log(err);
     }
     else{
+        const dayta = fs.readFileSync('Info.txt').toString()
+        console.log("Dayta is : ", dayta)
         console.log("Successfully File Created");
         // console.log(fs.readFileSync('Info.txt'));
     }
@@ -27,3 +29,4 @@ fs.readFile('Info.txt' , (err , data) => {
         console.log("Successfully File Readed");
     }
 })
+

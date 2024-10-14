@@ -5,7 +5,7 @@ let http = require('http');
 
 let server = http.createServer((req , res) => {
     res.write('Hello Peter\n')
-    res.end("Theek Hy  ?")
+    res.end("Theek Hy   ?")
 })
 
 server.listen(80)
